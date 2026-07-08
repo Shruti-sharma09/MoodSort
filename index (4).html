@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoodSort — AI Moodboard Organizer</title>
+<meta name="description" content="Upload your inspiration photos and a pretrained neural network automatically sorts them into a tidy, categorized moodboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">✦</span>
+      <span class="brand-name">MoodSort</span>
+    </div>
+    <p class="brand-tag">Upload your inspiration photos — an AI model classifies each one and sorts them into a tidy moodboard automatically.</p>
+  </header>
+
+  <section class="panel upload-panel">
+    <div class="dropzone" id="dropzone">
+      <input type="file" id="fileInput" accept="image/*" multiple hidden>
+      <div class="dropzone-inner">
+        <span class="dropzone-icon">⤒</span>
+        <p class="dropzone-text">Drop photos here or <span class="dropzone-link">browse</span> — select as many as you like</p>
+        <p class="dropzone-hint">Processed locally in your browser, nothing is uploaded anywhere</p>
+      </div>
+    </div>
+    <p class="model-status" id="modelStatus">Loading the AI model…</p>
+  </section>
+
+  <section class="progress-panel" id="progressPanel" hidden>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <p class="progress-label" id="progressLabel">Sorting 0 of 0…</p>
+  </section>
+
+  <main class="board" id="board">
+    <p class="board-empty" id="boardEmpty">Your sorted moodboard will appear here — grouped by Nature, Architecture, People, Animals, Food, Objects, and anything else.</p>
+  </main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<canvas id="thumbCanvas" width="240" height="240" hidden></canvas>
+
+<script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+<script src="categorize.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
