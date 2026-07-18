@@ -2,8 +2,6 @@
 
 Upload a batch of inspiration photos and a pretrained neural network automatically sorts them into a clean, categorized moodboard — Nature, Architecture, People, Animals, Food, Objects — the way a designer would manually tag them, done in seconds.
 
-**[Live Demo](#)** — replace this with your GitHub Pages link after deploying (steps below)
-
 ![MoodSort preview](https://via.placeholder.com/900x500/FAFAFC/A855F7?text=MoodSort+%E2%80%94+AI+Moodboard+Organizer)
 
 ## Features
